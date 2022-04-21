@@ -1,5 +1,13 @@
 import pickle
 
+class PeopleTel:
+    def init(self, numberroom, lastName, firstName, patronymic, telephone):
+        self.numberroom = numberroom
+        self.firstName = firstName
+        self.lastName = lastName
+        self.patronymic = patronymic
+        self.telephone = telephone
+
 
 with open('Test.dat', 'rb') as f:
     Telefonists = pickle.load(f)
@@ -93,7 +101,7 @@ while True:
     elif command == '6':
         s = input("добавление записи(номер помещения фамилия имя отчество телефон): ")
         if len(s.split())>4:
-            Telefonists.append(Telefonists.PeopleTel(*s.split(maxsplit=4)))
+            Telefonists.append(PeopleTel(*s.split(maxsplit=4)))
             print("запись добавлена")
         else: print('error')
 
