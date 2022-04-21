@@ -1,7 +1,7 @@
 import pickle
 
 
-with open('Пробный.dat', 'rb') as f:
+with open('Test.dat', 'rb') as f:
     Telefonists = pickle.load(f)
 
 
@@ -93,14 +93,14 @@ while True:
     elif command == '6':
         s = input("добавление записи(номер помещения фамилия имя отчество телефон): ")
         if len(s.split())>4:
-            Telefonists.append(PeopleTel(*s.split(maxsplit=4)))
+            Telefonists.append(Telefonists.PeopleTel(*s.split(maxsplit=4)))
             print("запись добавлена")
         else: print('error')
 
     else:
-        print('|———————————————————————Stopped———————————————————————|')
+        print('|———————————————————Stopped——————————————————|')
         break
     print()
 
-with open('Пробный.dat', 'wb') as f:
+with open('Test.dat', 'wb') as f:
     pickle.dump(Telefonists, f)
